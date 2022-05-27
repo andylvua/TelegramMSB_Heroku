@@ -101,8 +101,9 @@ def start_handler(update: Update, context: CallbackContext) -> ConversationHandl
             reply_keyboard, resize_keyboard=True, input_field_placeholder='Оберіть опцію'
         ),
     )
-    
+
     return ConversationHandler.END
+
 
 @under_maintenance
 def scan_handler(update: Update, context: CallbackContext) -> None:
@@ -1057,6 +1058,7 @@ def main() -> None:
             ],
         },
         fallbacks=[CommandHandler('cancel', cancel_report),
+                   CommandHandler('start', start_handler),
                    MessageHandler(Filters.text("Скасувати"), cancel_report)]
     )
 
@@ -1068,6 +1070,7 @@ def main() -> None:
             ],
         },
         fallbacks=[CommandHandler('cancel', cancel_report),
+                   CommandHandler('start', start_handler),
                    MessageHandler(Filters.text("Скасувати"), cancel_report)]
     )
 
@@ -1082,6 +1085,7 @@ def main() -> None:
             ],
         },
         fallbacks=[CommandHandler('cancel', cancel_search),
+                   CommandHandler('start', start_handler),
                    MessageHandler(Filters.text("Скасувати"), cancel_search)]
     )
 

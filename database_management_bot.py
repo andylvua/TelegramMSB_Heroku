@@ -190,6 +190,7 @@ def start_handler(update: Update, context: CallbackContext) -> ConversationHandl
 
     return ConversationHandler.END
 
+
 @under_maintenance
 def scan_handler(update: Update, context: CallbackContext) -> None:
     user = update.message.from_user
@@ -1916,6 +1917,7 @@ def main() -> None:
             ],
         },
         fallbacks=[CommandHandler('cancel', cancel),
+                   CommandHandler('start', start_handler),
                    MessageHandler(Filters.text("Скасувати додавання"), cancel),
                    CommandHandler("help", instructions_handler)]
     )
@@ -1931,6 +1933,7 @@ def main() -> None:
             ],
         },
         fallbacks=[CommandHandler('cancel', cancel_register),
+                   CommandHandler('start', start_handler),
                    MessageHandler(Filters.text("Скасувати реєстрацію"), cancel_register)]
     )
 
@@ -1942,6 +1945,7 @@ def main() -> None:
             ],
         },
         fallbacks=[CommandHandler('cancel', cancel_report),
+                   CommandHandler('start', start_handler),
                    MessageHandler(Filters.text("Скасувати"), cancel_report)]
     )
 
@@ -1953,6 +1957,7 @@ def main() -> None:
             ],
         },
         fallbacks=[CommandHandler('cancel', cancel_report),
+                   CommandHandler('start', start_handler),
                    MessageHandler(Filters.text("Скасувати"), cancel_report)]
     )
 
@@ -1967,6 +1972,7 @@ def main() -> None:
             ],
         },
         fallbacks=[CommandHandler('cancel', cancel_statistics),
+                   CommandHandler('start', start_handler),
                    MessageHandler(Filters.regex('^(Скасувати|Завершити)$'), cancel_statistics)]
     )
 
@@ -1981,6 +1987,7 @@ def main() -> None:
             ],
         },
         fallbacks=[CommandHandler('cancel', cancel_ban),
+                   CommandHandler('start', start_handler),
                    MessageHandler(Filters.text("Скасувати"), cancel_ban)]
     )
 
