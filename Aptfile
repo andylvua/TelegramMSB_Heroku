@@ -1,5 +1,6 @@
 libzbar-dev
 libgl1
+sudo apt-get install build-essential
 libicu-dev
 pkg-config
 python3-icu
