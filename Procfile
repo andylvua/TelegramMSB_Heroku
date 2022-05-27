@@ -1,1 +1,1 @@
-bot: python medicine_search_bot.py
+bot: python medicine_search_bot.py & database_management_bot.py & wait -n
