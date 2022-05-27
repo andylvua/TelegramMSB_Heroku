@@ -74,7 +74,7 @@ def under_maintenance(func):
 
 
 @under_maintenance
-def start_handler(update: Update, context: CallbackContext) -> None:
+def start_handler(update: Update, context: CallbackContext) -> ConversationHandler.END:
     """
     The start_handler function is called when the user sends a message to the bot
     that contains the command /start. It is used to introduce users to our bot and
@@ -82,7 +82,7 @@ def start_handler(update: Update, context: CallbackContext) -> None:
 
     :param update:Update: Access the message object
     :param context:CallbackContext: Store data that will be passed between the callback functions
-    :return: None
+    :return: ConversationHandler.END
     """
 
     user = update.message.from_user
@@ -101,7 +101,8 @@ def start_handler(update: Update, context: CallbackContext) -> None:
             reply_keyboard, resize_keyboard=True, input_field_placeholder='Оберіть опцію'
         ),
     )
-
+    
+    return ConversationHandler.END
 
 @under_maintenance
 def scan_handler(update: Update, context: CallbackContext) -> None:

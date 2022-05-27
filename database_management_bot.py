@@ -151,7 +151,7 @@ def restricted(func):
 
 
 @under_maintenance
-def start_handler(update: Update, context: CallbackContext) -> None:
+def start_handler(update: Update, context: CallbackContext) -> ConversationHandler.END:
     """
     The start_handler function is called when the user sends a message to the bot
     that contains the command /start. It is used to initialize and reset all variables
@@ -159,7 +159,7 @@ def start_handler(update: Update, context: CallbackContext) -> None:
 
     :param update: Update: Update the user interface
     :param context: CallbackContext: Store data during the conversation
-    :return: None
+    :return: ConversationHandler.END
     """
     user = update.message.from_user
     logger.info("%s: %s", user.first_name, update.message.text)
@@ -188,6 +188,7 @@ def start_handler(update: Update, context: CallbackContext) -> None:
                                          input_field_placeholder='Оберіть опцію')
     )
 
+    return ConversationHandler.END
 
 @under_maintenance
 def scan_handler(update: Update, context: CallbackContext) -> None:
