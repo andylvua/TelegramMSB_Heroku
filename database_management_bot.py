@@ -50,7 +50,7 @@ REASON, BAN = range(2)
 
 MAIN_REPLY_KEYBOARD = [['Перевірити наявність', 'Додати новий медикамент', 'Інструкції', 'Надіслати відгук']]
 
-UNDER_MAINTENANCE = True
+UNDER_MAINTENANCE = False
 
 
 def under_maintenance(func):
@@ -756,7 +756,7 @@ def insert_to_db(update: Update, context: CallbackContext) -> int or Conversatio
                                              input_field_placeholder="Оберіть опцію")
         )
 
-        logger.info("Clearing info: %s", context.user_data["DRUG_INFO"])
+        logger.info("Clearing info")
         context.user_data["DRUG_INFO"].clear()
         logger.info("Cleared")
 
@@ -1850,18 +1850,18 @@ def send_plot(update: Update, context: CallbackContext) -> None:
 
     quantities = statistics.get_quantities('resources/country_codes.json')
     not_empty_countries = statistics.get_not_empty_countries(quantities)
-
     plot = statistics.get_bar_chart(not_empty_countries)
 
     img_buf = io.BytesIO()
     plot.savefig(img_buf, format='png')
 
+    img = img_buf.getvalue()
+
     update.message.reply_photo(
-        img_buf.getvalue(),
+        img,
         caption="*Статистика по країнах на основі колекції медикаментів*",
         parse_mode="MarkdownV2",
-        reply_markup=InlineKeyboardMarkup(keyboard,
-                                          resize_keyboard=True,)
+        reply_markup=InlineKeyboardMarkup(keyboard, resize_keyboard=True)
     )
 
 

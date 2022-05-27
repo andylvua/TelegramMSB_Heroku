@@ -43,7 +43,7 @@ SEARCH = 1
 
 MAIN_REPLY_KEYBOARD = [['Сканувати', 'Пошук'], ['Інструкції', 'Налаштування', 'Надіслати відгук']]
 
-UNDER_MAINTENANCE = True
+UNDER_MAINTENANCE = False
 
 
 def under_maintenance(func):
