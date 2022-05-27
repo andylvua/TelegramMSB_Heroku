@@ -1,5 +1,5 @@
 from typing import Optional
-# from polyglot.detect import Detector
+from polyglot.detect import Detector
 
 
 def check_name(name) -> Optional[str]:
@@ -42,8 +42,8 @@ def check_description(description: str) -> str:
     :return: The description if it is ukrainian, and language otherwise
     """
     try:
-        # assert Detector(description).language.name == "Ukrainian"
+        assert Detector(description).language.name == "Ukrainian"
         return description
     except AssertionError:
-        return "Fali"
-        # return Detector(description).language.name
+        # return "Fali"
+        return Detector(description).language.name
