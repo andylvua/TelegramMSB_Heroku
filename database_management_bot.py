@@ -90,7 +90,7 @@ def superuser(func):
     """
     @wraps(func)
     def wrapped(update, context, *args, **kwargs):
-        user_id = update.effective_user.id
+        user_id = str(update.effective_user.id)
         superusers = os.environ.get('superusers')
 
         if user_id not in superusers.split(", "):
