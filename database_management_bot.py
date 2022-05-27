@@ -93,7 +93,7 @@ def superuser(func):
         user_id = update.effective_user.id
         superusers = os.environ.get('superusers')
 
-        if user_id not in list(int(value) for key, value in superusers):
+        if user_id not in superusers.split(", "):
             logger.info("Unauthorized superuser access denied ID: {}".format(user_id))
 
             update.message.reply_text(
