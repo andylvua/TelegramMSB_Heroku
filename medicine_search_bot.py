@@ -25,7 +25,8 @@ import re
 from pymongo import MongoClient
 
 logging.basicConfig(
-    format='%(asctime)s.%(msecs)03d - %(name)s - %(funcName)s() - %(levelname)s - %(message)s',
+    format='%(asctime)s.%(msecs)03d - medicine_search_bot.py - %(name)s - %(funcName)s() - '
+           '%(levelname)s - %(message)s',
     datefmt='%d/%m/%Y %H:%M:%S', level=logging.INFO
 )
 logger = logging.getLogger(__name__)
