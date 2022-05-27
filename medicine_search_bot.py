@@ -668,7 +668,7 @@ def send_review(update: Update, context: CallbackContext) -> ConversationHandler
             smtp.starttls()
             smtp.ehlo()
 
-            address = os.environ.get('email_adress')
+            address = os.environ.get('email_address')
             password = os.environ.get('email_password')
 
             smtp.login(address, password)
