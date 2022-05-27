@@ -2,5 +2,4 @@ libzbar-dev
 libgl1
 python3-icu
 libicu-dev
-libicu63
 pkg-config

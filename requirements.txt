@@ -19,5 +19,3 @@ numpy==1.22.4
 geopy~=2.2.0
 pycountry_convert
 regex_engine
-wheel
-# ./PyICU-2.5-cp38-cp38-linux_x86_64.whl
