@@ -1034,7 +1034,7 @@ def cancel_search(update: Update, context: CallbackContext) -> ConversationHandl
 
 def main() -> None:
     # noinspection SpellCheckingInspection
-    updater = Updater(os.environ.get('token'))
+    updater = Updater(os.environ.get('msb_token'))
     dispatcher = updater.dispatcher
 
     start = CommandHandler('start', start_handler)

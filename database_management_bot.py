@@ -1865,7 +1865,7 @@ def send_plot(update: Update, context: CallbackContext) -> None:
 
 
 def main() -> None:
-    updater = Updater(os.environ.get('token'))
+    updater = Updater(os.environ.get('msb_db_token'))
     dispatcher = updater.dispatcher
 
     scan = MessageHandler(Filters.regex('^(Перевірити наявність|/scan|Ще раз)$'), scan_handler)
