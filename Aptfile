@@ -4,4 +4,5 @@ libicu-dev
 python3-icu
 pkg-config
 build-essential
-python3.10-dev
+python3-dev
+apt-get install python3.10-dev
