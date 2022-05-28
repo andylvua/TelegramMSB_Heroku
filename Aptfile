@@ -1,5 +1,6 @@
 libzbar-dev
 libgl1
 python3-dev
+gcc
 libicu-dev
 python3-icu
