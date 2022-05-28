@@ -1,3 +1,8 @@
 libzbar-dev
 libgl1
-shap
+libicu-dev
+python3-icu
+libpython3.10
+libpython3.10-dev
+python3.10-dev
+gcc
