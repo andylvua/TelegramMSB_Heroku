@@ -1848,9 +1848,14 @@ def send_plot(update: Update, context: CallbackContext) -> None:
     keyboard = [[InlineKeyboardButton(text="Інтеракивна карта",
                                       web_app=WebAppInfo(url='https://countries-map.herokuapp.com/'))]]
 
-    context.bot.send_chat_action(chat_id=update.effective_chat.id, action=ChatAction.UPLOAD_PHOTO)
+    loading_message = update.message.reply_text(
+        text="📥 Отримання інформації з бази даних, зачекайте...",
+    )
 
     quantities = statistics.get_quantities('resources/country_codes.json')
+
+    context.bot.send_chat_action(chat_id=update.effective_chat.id, action=ChatAction.UPLOAD_PHOTO)
+
     not_empty_countries = statistics.get_not_empty_countries(quantities)
     plot = statistics.get_bar_chart(not_empty_countries)
 
@@ -1865,6 +1870,8 @@ def send_plot(update: Update, context: CallbackContext) -> None:
         parse_mode="MarkdownV2",
         reply_markup=InlineKeyboardMarkup(keyboard, resize_keyboard=True)
     )
+
+    loading_message.delete()
 
 
 def main() -> None:
