@@ -439,19 +439,15 @@ def get_query_heading(barcode) -> str:
 
     heading_objects = soup.find_all('h3')
 
-    first_5_headings = heading_objects[0:5]
+    first_3_headings = heading_objects[0:3]
 
-    print(first_5_headings)
-
-    for heading in first_5_headings:
-        print(heading.getText() + ": " + detect(heading.getText()))
+    for heading in first_3_headings:
         if detect(heading.getText()) == "uk":
             result_heading = heading.getText()
             break
     else:
         print("No uk language found")
-        result_heading = first_5_headings[0].getText()
-        print("result: " + result_heading)
+        result_heading = first_3_headings[0].getText()
 
     result_heading_formatted = re.sub(r"\([^()]*\)", "", result_heading.split(' - ')[0]
                                       .replace(barcode, '')).lstrip().rstrip('.').rstrip()
