@@ -1,3 +1,7 @@
 libzbar-dev
 libgl1
 libicu-dev
+python3-icu
+pkg-config
+build-essential
+python3.10-dev
