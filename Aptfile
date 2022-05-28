@@ -2,5 +2,7 @@ libzbar-dev
 libgl1
 libicu-dev
 python3-icu
+python3-setuptools
+pkg-config
 libpython3.10
 gcc
