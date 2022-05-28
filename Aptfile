@@ -2,3 +2,6 @@ libzbar-dev
 libgl1
 libicu-dev
 python3-icu
+libpython3.10
+libpython3.10-dev
+python3.10-dev
