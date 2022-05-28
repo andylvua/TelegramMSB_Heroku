@@ -432,7 +432,7 @@ def get_query_heading(barcode) -> str:
     :param barcode: Barcode for the Google search
     :return: A string containing the first heading of a search query
     """
-    url = 'https://google.com/search?q=' + barcode
+    url = 'https://google.com/search?hl=uk&q=' + barcode
 
     request_result = requests.get(url)
     soup = bs4.BeautifulSoup(request_result.text, "html.parser")
