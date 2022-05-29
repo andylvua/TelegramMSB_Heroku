@@ -1,6 +1,6 @@
 """
 Author: Andrew Yaroshevych
-Version: 2.5.5 Development
+Version: 2.6.5 Development
 """
 import os
 from functools import wraps
